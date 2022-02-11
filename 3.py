@@ -1,2 +1,1 @@
-Can't find file kukuku
-kukuku
+print('bohdan')
