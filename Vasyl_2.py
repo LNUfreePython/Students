@@ -10,4 +10,4 @@ class Solution:
             x// = 10
         num = (num * ten) +x
 
-        return num == org    22222
+        return num == org   
