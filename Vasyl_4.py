@@ -8,7 +8,7 @@ class Solution:
         for c in range(a)
             f=0
             for r in range(1,len(strs)):
-                if strs[r][c] == strs[r-1][c]:
+                if strs[r][c] == strs[r-1][c]: #2
                     f+=1
                 else:
                      break
@@ -16,4 +16,4 @@ class Solution:
                 res+=strs[r][c]
             else:
                 return res
-        return res        lab_4.py
+        return res       
