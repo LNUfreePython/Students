@@ -7,4 +7,4 @@ class Solution:
                 stack.append(i)
             elif stack == [] or dictt[stack.pop()]!=i:
                 return False
-        return stack==[]        lab_5.py
+        return stack==[]        #4
