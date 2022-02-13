@@ -14,4 +14,4 @@ class Solution(object):
 				if nums[i]+nums
 				    res.append(i)
 					res.append(j)
-		return resVasyl_1.py
+		return res
