@@ -18,5 +18,5 @@ if p1 is not None:
 if p2 is not None:
     p.next = p2
     
-return dummy.next    
+return dummy.next    #2
   
