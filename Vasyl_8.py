@@ -8,4 +8,4 @@ def searchInsert(self,n: List[int],target: int) -> int:
                 j=m-1
             else:
                 i=m+1
-        return i        Vasyl_8.py
+        return i       
