@@ -19,4 +19,4 @@ if p2 is not None:
     p.next = p2
     
 return dummy.next    
-    Vasyl_6.py
+  
