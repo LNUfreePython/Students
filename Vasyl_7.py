@@ -8,4 +8,4 @@ class Solution
             if nums [p] != nums [i]:
                 nums[p + 1] = nums[i]
                 p = p + 1
-            return p + 1    Vasyl_7.py #1
+            return p + 1   
