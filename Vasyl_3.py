@@ -23,4 +23,4 @@ class Solution:
         if i == len(s)-1:
             sum += inventory[s[i]]
             
-        return sum    
+        return sum  #2  
