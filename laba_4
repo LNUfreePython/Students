@@ -1,0 +1,20 @@
+class Solution
+    def isHapppy(self,n: int) ->bool:
+        check = []
+        n =str(n)
+        
+        while True
+            total = 0
+            
+            for i in n:
+                total += int(i) * int(i)
+                
+                if total == 1
+                    return True
+                    
+                if total in check:
+                    return False
+                    
+                check.append(total)
+
+                n = str(total)    
