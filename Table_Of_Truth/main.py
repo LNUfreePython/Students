@@ -9,8 +9,19 @@ def f_value(a,b, c=None):
     return [a,b,log_con.NOT(a), log_con.AND(a,b), log_con.OR(a,b), log_con.IMP(a,b), log_con.EQU(a,b), log_con.XOR(a,b)]
 
 def s_value(a, b, c):
-    return [a, b, c, log_con.OR(a, c), log_con.IMP(a, b), log_con.IMP(a, c), log_con.IMP(log_con.OR(a, c), b), log_con.OR(log_con.IMP(a, b), log_con.IMP(a, c)),
-            log_con.IMP(log_con.IMP(log_con.OR(a, c), b), log_con.OR(log_con.IMP(a, b), log_con.IMP(a, c)))]
+    first = log_con.OR(log_con.NOT(a), b)
+    second = log_con.NOT(first)
+    third = log_con.OR(log_con.NOT(b), c)
+    fouth = log_con.AND(second, c)
+    return [a,
+            b,
+            c,
+            first,
+            second,
+            third,
+            fouth,
+            log_con.EQU(third, fouth)
+        ]
 
 
 def row(n, a, b, c=None):
@@ -41,10 +52,22 @@ second_table = PrettyTable()
 first_table = PrettyTable()
 
 def variant_7():
-    second_table.field_names = ["a", "b", "c", "a ∨ c", "a→b", "a→c", "(a∨c)→b", "(a→b)∨(a→c)", "((a∨c)→b)→((a→b)∨(a→c))"]
+ 
+    second_table.field_names = [
+        "a",
+        "b",
+         "c",
+        "not(a) or b",
+        "not(not(a) or b)",
+        "not(b) or c",
+        "not(not(a) or b) and c",
+        "not(not(a) or b) and c eq (not(b) or c)"
+    ]
+
     first_table.field_names = ["a", "b", "!a", "a^b", "a v b", "a→b", "a〜b", "a ⊕ b"]
     add_row(2)
     add_row(3)
     print(f"{first_table}\n\n{second_table}")
 
 variant_7()
+
