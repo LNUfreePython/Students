@@ -12,15 +12,15 @@ def s_value(a, b, c):
     first = log_con.OR(log_con.NOT(a), b)
     second = log_con.NOT(first)
     third = log_con.OR(log_con.NOT(b), c)
-    fouth = log_con.AND(second, c)
+    fourth = log_con.AND(second, c)
     return [a,
             b,
             c,
             first,
             second,
             third,
-            fouth,
-            log_con.EQU(third, fouth)
+            fourth,
+            log_con.EQU(third, fourth)
         ]
 
 
@@ -37,7 +37,7 @@ def combinations(*args, p=1):
         result = [x + [y] for x in result for y in i]
     return result
 
-# ((a∨c)→b)→((a→b)∨(a→c))
+# "not(not(a) or b) and c eq (not(b) or c)"
 
 def add_row(n):
     lst = []
