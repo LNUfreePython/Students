@@ -1,5 +1,5 @@
 # SortBubble
-def bubble_sort(input_array):
+def bubble_sort(input_array, start_index = 0, end_index = -1 ):
     length = len(input_array)
     for i in range(0, length):
         for j in range(0, length - i - 1):

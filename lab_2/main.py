@@ -1,9 +1,17 @@
 import sorting_methods
 
 
-random_array = [1,10,3,8,4,14,2,2]
-sorting_methods.print_sorted(random_array, 'bubble')
-sorting_methods.print_sorted(random_array, 'insert')
-sorting_methods.print_sorted(random_array, 'selection')
+def run(start_index = 0, end_index = 0, sorting_type = 'bubble'):
+  random_array = [1,10,3,8,4,14,2,2]
+  print ( '-->>>Last index is ' + str(len(random_array)))
+  start_index = start_index
+  end_index = end_index
+  size = len(random_array)
+  random_array = random_array[start_index:end_index]
+  sorting_methods.print_sorted(random_array, sorting_type)
 
-sorting_methods.print_sorted(random_array)
+run(0,8,'bubble')
+
+# run(0,3, 'bubble')
+# run(0,3, 'insert')
+# run(0,3, 'selection')
