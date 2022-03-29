@@ -10,17 +10,20 @@ def bubble_sort(input_array, start_index = 0, end_index = -1 ):
     return input_array
 
 #Сортування вставкою
-def insertion_sort(input_array): 
-    length = len(input_array) 
-    for i in range(1, length):
-        key = input_array[i]
-        j = i
-        while (j - 1 >= 0) and (input_array[j - 1] > key):
-            input_array[j - 1], input_array[j] = input_array[j], [j - 1]
-            j = j - 1
-        input_array[j] = key
+def insertion_sort(input_array):
+  for i in range(1, len(input_array)):
+    key = input_array[i]
+    # Move elements of arr[0..i-1], that are
+    # greater than key, to one position ahead
+    # of their current position
+    j = i-1
+    while j >=0 and key < input_array[j] :
+            input_array[j+1] = input_array[j]
+            j -= 1
+    input_array[j+1] = key
 
-    return input_array
+  return input_array
+
 
 # #Сортування вибором
 def selection_sort(input_array):
