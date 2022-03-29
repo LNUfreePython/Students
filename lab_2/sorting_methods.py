@@ -16,7 +16,7 @@ def insertion_sort(input_array):
         key = input_array[i]
         j = i
         while (j - 1 >= 0) and (input_array[j - 1] > key):
-            sort[j - 1], input_array[j] = input_array[j], [j - 1]
+            input_array[j - 1], input_array[j] = input_array[j], [j - 1]
             j = j - 1
         input_array[j] = key
 
