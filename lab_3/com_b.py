@@ -27,8 +27,7 @@ def _C(n,k):
 def Gen_perm(A):
 
     f = open("permutations.txt", "w")
-    for i in range(factorial(len(A))):
-        print("look at permutations.txt,generating connections in lexical order.txt")         
+    for i in range(factorial(len(A))):        
         f.write(str(i+1) + ': ' + str(A) + "\n")   
         p = len(A)-1
 
@@ -42,6 +41,7 @@ def Gen_perm(A):
         A[p-1],A[q]=A[q],A[p-1]
 
     f.close()
+    print("look at permutations.txt to find permutations")
         
 A = [1,2,3,4,5,6]
 A.sort()
@@ -55,9 +55,9 @@ def GenComb(k,n):
     B.append(0)
     while True:
         print(B[0:k])
-        f = open("generating connections in lexical order.txt", "a")
+        f = open("lexical order.txt", "a")     
         for j in range(len(B)-1):
-            f.write("combinations" + ":"  + str(B) + "\n" ) 
+            f.write(str(B[0:k]) + "\n")
             if B[j]+1 == B[j+1]:
                 B[j]=j
             else:
