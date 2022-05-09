@@ -28,7 +28,7 @@ def Gen_perm(A):
 
     f = open("permutations.txt", "w")
     for i in range(factorial(len(A))):
-        print("look at permutations.txt")         
+        print("look at permutations.txt,generating connections in lexical order.txt")         
         f.write(str(i+1) + ': ' + str(A) + "\n")   
         p = len(A)-1
 
