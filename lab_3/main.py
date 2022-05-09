@@ -1,4 +1,7 @@
-from com_b import a_n_k,factorial,_a_n_k,_C,C
+
+from com_b import a_n_k,factorial,_a_n_k,_C,C,Gen_perm,GenComb,A
+
+
 
 def main():
   n = int(input ('Введіть n: '))
@@ -6,10 +9,13 @@ def main():
   printer('Factorial', factorial(n))
 
   if n > k:
+    printer('generation of combinations in lexical order',GenComb(k,n))
+    printer('generation of combinations',Gen_perm(A))
     printer('Permutation', a_n_k(n,k))
     printer('Permutation repeated', _a_n_k(n,k))
     printer('Combination', C(n,k))
     printer('Combination repeated', _C(n,k))
+    
   elif k > n:
     print("k should be lover than n")
 
