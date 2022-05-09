@@ -17,15 +17,14 @@ def _a_n_k(n,k):
 
 #combination
 def C(n,k):
-  return factorial(n)//factorial(k)*factorial(n-k)
+  return factorial(n)//(factorial(k)*factorial(n-k))
 
 #combination without repetitions
 def _C(n,k):
-  return factorial(n + k -1)//factorial(k)*factorial(n-1)
+  return factorial(n + k -1)//(factorial(k)*factorial(n-1))
 
 
 def Gen_perm(A):
-
     f = open("permutations.txt", "w")
     for i in range(factorial(len(A))):        
         f.write(str(i+1) + ': ' + str(A) + "\n")   
@@ -46,33 +45,27 @@ def Gen_perm(A):
 A = [1,2,3,4,5,6]
 A.sort()
 
-
-def GenComb(k,n):
-    B = []
-    for i in range(k):
-        B.append(i)
-    B.append(n)
-    B.append(0)
-    while True:
-        print(B[0:k])
-        f = open("lexical order.txt", "a")     
-        for j in range(len(B)-1):
-            f.write(str(B[0:k]) + "\n")
-            if B[j]+1 == B[j+1]:
-                B[j]=j
-            else:
-                break
-        if j < k:
-            B[j] += 1
-        else:
+def gen_comb(arr, k):
+    n = len(arr)
+    index = 0
+    for i in range(k-1, -1, -1):
+        if arr[i] != n - k + i + 1:
+            index = i
             break
+    arr[index] += 1
+    for i in range(index, k):
+
+        arr[i+1] = arr[i]+1
+
+def GenComb(n, k):
+    f = open("combinations.txt", "w")
+    arr = list(range(1, n+1))
+    arr.sort()
+    for i in range(C(len(arr), k)):
+        f.write(str(i+1) + ': ' + str(tuple(arr[:k])) + "\n")   
+        print(tuple(arr[:k]))
+        gen_comb(arr, k)
     f.close()
-
-
-
-
-
-
 
 
 

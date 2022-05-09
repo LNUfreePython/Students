@@ -9,12 +9,12 @@ def main():
   printer('Factorial', factorial(n))
 
   if n > k:
-    printer('Permutation', a_n_k(n,k))
-    printer('Permutation repeated', _a_n_k(n,k))
-    printer('Combination', C(n,k))
-    printer('Combination repeated', _C(n,k))
-    printer('Permutations',Gen_perm(A))
-    printer('Lexical order',GenComb(k,n))
+    # printer('Permutation', a_n_k(n,k))
+    # printer('Permutation repeated', _a_n_k(n,k))
+    # printer('Combination', C(n,k))
+    # printer('Combination repeated', _C(n,k))
+    # printer('Permutations',Gen_perm(A))
+    printer('Lexical order',GenComb(n,k))
     
   elif k > n:
     print("k should be lover than n")
