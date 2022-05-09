@@ -42,8 +42,7 @@ def Gen_perm(A):
     f.close()
     print("look at permutations.txt to find permutations")
         
-A = [1,2,3,4,5,6]
-A.sort()
+
 
 def gen_comb(arr, k):
     n = len(arr)
@@ -66,14 +65,4 @@ def GenComb(n, k):
         print(tuple(arr[:k]))
         gen_comb(arr, k)
     f.close()
-
-
-
-
-
-
-       
-
-
-
 
